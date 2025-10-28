@@ -9,62 +9,45 @@ int main() {
     int casasCavaloBaixo = 2;
     int casasCavaloEsquerda = 1;
 
-    // ---------------------------------------------------
-    // Movimentação da Torre → Para a direita (FOR)
-    // ---------------------------------------------------
+    // Torre → For (movimento reto para a direita)
     printf("Movimento da Torre:\n");
     for(int i = 0; i < casasTorre; i++) {
         printf("Direita\n");
     }
-    
     printf("\n");
 
-    // ---------------------------------------------------
-    // Movimentação do Bispo → Cima e Direita (WHILE)
-    // ---------------------------------------------------
+    // Bispo → While (diagonal: cima e direita)
     printf("Movimento do Bispo:\n");
-    int contadorBispo = 0;
-    while(contadorBispo < casasBispo) {
+    int b = 0;
+    while(b < casasBispo) {
         printf("Cima, Direita\n");
-        contadorBispo++;
+        b++;
     }
-    
     printf("\n");
 
-    // ---------------------------------------------------
-    // Movimentação da Rainha → Esquerda (DO-WHILE)
-    // ---------------------------------------------------
+    // Rainha → Do-while (reta para a esquerda)
     printf("Movimento da Rainha:\n");
-    int contadorRainha = 0;
+    int r = 0;
     do {
         printf("Esquerda\n");
-        contadorRainha++;
-    } while(contadorRainha < casasRainha);
-
+        r++;
+    } while(r < casasRainha);
     printf("\n");
 
-    // ---------------------------------------------------
-    // Movimentação do Cavalo → For + While Aninhados
-    // Movimento em L: 2 casas para Baixo + 1 casa para Esquerda
-    // ---------------------------------------------------
+    // Cavalo → Loops ANINHADOS (duas casas p/ baixo + uma p/ esquerda)
     printf("Movimento do Cavalo:\n");
 
     for(int i = 0; i < 1; i++) {
-        int contadorBaixo = 0;
-        
-        // Primeiro movimento: duas casas para baixo
-        while(contadorBaixo < casasCavaloBaixo) {
+        int c = 0;
+        while(c < casasCavaloBaixo) {
             printf("Baixo\n");
-            contadorBaixo++;
+            c++;
         }
-        
-        // Segunda etapa: uma casa para a esquerda
         for(int j = 0; j < casasCavaloEsquerda; j++) {
             printf("Esquerda\n");
         }
     }
 
     printf("\nFim da simulação de movimentos.\n");
-    
     return 0;
 }
