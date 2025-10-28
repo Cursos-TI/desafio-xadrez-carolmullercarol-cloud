@@ -2,11 +2,13 @@
 
 int main() {
     
-    // Quantidade de casas que cada peça irá se mover
+    // Quantidade de casas para cada peça
     int casasTorre = 5;
     int casasBispo = 5;
     int casasRainha = 8;
-    
+    int casasCavaloBaixo = 2;
+    int casasCavaloEsquerda = 1;
+
     // ---------------------------------------------------
     // Movimentação da Torre → Para a direita (FOR)
     // ---------------------------------------------------
@@ -15,8 +17,8 @@ int main() {
         printf("Direita\n");
     }
     
-    printf("\n"); // Espaçamento para separar os movimentos
-    
+    printf("\n");
+
     // ---------------------------------------------------
     // Movimentação do Bispo → Cima e Direita (WHILE)
     // ---------------------------------------------------
@@ -27,8 +29,8 @@ int main() {
         contadorBispo++;
     }
     
-    printf("\n"); // Espaçamento para separar os movimentos
-    
+    printf("\n");
+
     // ---------------------------------------------------
     // Movimentação da Rainha → Esquerda (DO-WHILE)
     // ---------------------------------------------------
@@ -38,8 +40,31 @@ int main() {
         printf("Esquerda\n");
         contadorRainha++;
     } while(contadorRainha < casasRainha);
-    
-    printf("\nFim da simulação de movimentos.\n");
 
+    printf("\n");
+
+    // ---------------------------------------------------
+    // Movimentação do Cavalo → For + While Aninhados
+    // Movimento em L: 2 casas para Baixo + 1 casa para Esquerda
+    // ---------------------------------------------------
+    printf("Movimento do Cavalo:\n");
+
+    for(int i = 0; i < 1; i++) {
+        int contadorBaixo = 0;
+        
+        // Primeiro movimento: duas casas para baixo
+        while(contadorBaixo < casasCavaloBaixo) {
+            printf("Baixo\n");
+            contadorBaixo++;
+        }
+        
+        // Segunda etapa: uma casa para a esquerda
+        for(int j = 0; j < casasCavaloEsquerda; j++) {
+            printf("Esquerda\n");
+        }
+    }
+
+    printf("\nFim da simulação de movimentos.\n");
+    
     return 0;
 }
